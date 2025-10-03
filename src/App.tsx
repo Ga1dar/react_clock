@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { Clock } from './Сlock';
+import { Clock } from './Clock';
 
 type State = {
   hasClock: boolean;
@@ -44,19 +44,6 @@ export class App extends React.PureComponent<{}, State> {
 
     if (this.nameTimerId) {
       window.clearInterval(this.nameTimerId);
-    }
-  }
-
-  componentDidUpdate(_: {}, prevState: State): void {
-    if (
-      this.state.hasClock &&
-      prevState.clockName !== this.state.clockName &&
-      prevState.hasClock
-    ) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        `Renamed from ${prevState.clockName} to ${this.state.clockName}`,
-      );
     }
   }
 
